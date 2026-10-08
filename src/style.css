@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* A4 page settings */
+@page {
+  size: A4;
+  margin: 12mm;
+}
+
+/* Normal screen view */
+body {
+  margin: 0;
+  background: #f1f5f9;
+}
+
+/* PDF / Print settings */
+@media print {
+  html,
+  body {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+
+  main {
+    min-height: auto !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  main > section {
+    width: auto !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Keep links clickable */
+  a {
+    color: inherit !important;
+    text-decoration: underline !important;
+  }
+
+  /* Avoid breaking project sections awkwardly */
+  article {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+@media print {
+  button {
+    display: none !important;
+  }
+}
